@@ -49,11 +49,13 @@ public class MoveShip : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             Ship.transform.position = new Vector3(Ship.transform.position.x - speed * Time.deltaTime, Ship.transform.position.y, Ship.transform.position.z);
+            Ship.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             Ship.transform.position = new Vector3(Ship.transform.position.x + speed * Time.deltaTime, Ship.transform.position.y, Ship.transform.position.z);
+            Ship.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         #endregion
     }
