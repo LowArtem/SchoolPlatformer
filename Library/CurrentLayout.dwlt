@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 10543
+  controlID: 4422
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 10592
+  controlID: 4321
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 10593
+  controlID: 4322
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -370,9 +370,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 824bffff
-    m_LastClickedID: -46206
-    m_ExpandedIDs: 744bffffbe4bffff924dffffb094ffff90e5ffffbaf4ffff9efbffff00000000c82c0000b02d00007a2e00009a310000cc310000f2310000
+    m_SelectedIDs: 30fbffff
+    m_LastClickedID: -1232
+    m_ExpandedIDs: 9efbffff000000000e2d00002c2d0000342d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -423,14 +423,14 @@ MonoBehaviour:
     height: 656
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 1456.5207928494606
+  lastFramingTime: 617.0927919451708
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.59500307, y: -0.2687677, z: -90.34073}
+    m_Target: {x: 0.11995397, y: -0.0040742233, z: -90.374115}
     speed: 2
-    m_Value: {x: -0.59500307, y: -0.2687677, z: -90.34073}
+    m_Value: {x: 0.11995397, y: -0.0040742233, z: -90.374115}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -458,9 +458,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 11.392275
+    m_Target: 11.750336
     speed: 2
-    m_Value: 11.392275
+    m_Value: 11.750336
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -615,19 +615,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Sources/Sprites
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 67
   m_LastFolders:
-  - Assets/Sources/Sprites
+  - Assets/Scripts
   m_LastFoldersGridSize: 67
   m_LastProjectPath: C:\Users\user\Unity projects\SchoolPlatformer\_Git SchoolPlatformer\SchoolPlatformer
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 78290000
-    m_LastClickedID: 10616
-    m_ExpandedIDs: 00000000b62700000e2b0000582b00005a2d00005c2d00005e2d0000602d0000622d0000642d0000662d0000682d00006a2d00006c2d0000ffffff7f
+    m_SelectedIDs: 582b0000
+    m_LastClickedID: 11096
+    m_ExpandedIDs: 00000000b6270000102b0000f42d0000f62d0000f82d0000fa2d0000fc2d0000fe2d0000002e0000022e0000042e0000062e0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -655,7 +655,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b62700000e2b0000582b00005a2d00005c2d00005e2d0000602d0000622d0000642d0000662d0000682d00006a2d00006c2d0000ffffff7f
+    m_ExpandedIDs: 00000000b6270000102b0000f42d0000f62d0000f82d0000fa2d0000fc2d0000fe2d0000002e0000022e0000042e0000062e0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -734,7 +734,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 768
-    width: 1486
+    width: 1503
     height: 250
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &19
