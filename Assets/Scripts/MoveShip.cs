@@ -59,22 +59,16 @@ public class MoveShip : MonoBehaviour
         {
             Ship.transform.position = new Vector3(Ship.transform.position.x - speed * Time.deltaTime, Ship.transform.position.y, Ship.transform.position.z);
             Ship.transform.rotation = Quaternion.Euler(0, 180, 0);
-<<<<<<< HEAD
             isLeft = true;
             isRight = false;
-=======
->>>>>>> 89e05ef5524f4cd764b428225e909acaf6e95b71
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             Ship.transform.position = new Vector3(Ship.transform.position.x + speed * Time.deltaTime, Ship.transform.position.y, Ship.transform.position.z);
             Ship.transform.rotation = Quaternion.Euler(0, 0, 0);
-<<<<<<< HEAD
             isRight = true;
             isLeft = false;
-=======
->>>>>>> 89e05ef5524f4cd764b428225e909acaf6e95b71
         }
         #endregion
     }
