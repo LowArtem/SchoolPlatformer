@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class MoveShip : MonoBehaviour
 {
@@ -9,6 +6,11 @@ public class MoveShip : MonoBehaviour
     public GameObject Ship;
 
     public float speed = 4.2f;
+
+    public static bool isRight = false;
+    
+    public static bool isLeft = false;
+
 
     void Update()
     {
@@ -27,11 +29,17 @@ public class MoveShip : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             Ship.transform.position = new Vector3(Ship.transform.position.x - speed * Time.deltaTime, Ship.transform.position.y, Ship.transform.position.z);
+            Ship.transform.rotation = Quaternion.Euler(0, 180, 0);
+            isLeft = true;
+            isRight = false;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             Ship.transform.position = new Vector3(Ship.transform.position.x + speed * Time.deltaTime, Ship.transform.position.y, Ship.transform.position.z);
+            Ship.transform.rotation = Quaternion.Euler(0, 0, 0);
+            isRight = true;
+            isLeft = false;
         }
         #endregion
 
@@ -50,11 +58,17 @@ public class MoveShip : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             Ship.transform.position = new Vector3(Ship.transform.position.x - speed * Time.deltaTime, Ship.transform.position.y, Ship.transform.position.z);
+            Ship.transform.rotation = Quaternion.Euler(0, 180, 0);
+            isLeft = true;
+            isRight = false;
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             Ship.transform.position = new Vector3(Ship.transform.position.x + speed * Time.deltaTime, Ship.transform.position.y, Ship.transform.position.z);
+            Ship.transform.rotation = Quaternion.Euler(0, 0, 0);
+            isRight = true;
+            isLeft = false;
         }
         #endregion
     }
