@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class BlastShot : MonoBehaviour {
+public class BlastShot : MonoBehaviour
+{
 
     Rigidbody2D rb;
 
@@ -38,7 +39,7 @@ public class BlastShot : MonoBehaviour {
     {
         if (other.gameObject.tag == "ground")
         {
-            Instantiate(particle, transform.position, transform.rotation);
+            Instantiate(particle, transform.position, new Quaternion(0.0f, -1.0f, 0.0f, 0.0f));
             Destroy(gameObject);
         }
     }

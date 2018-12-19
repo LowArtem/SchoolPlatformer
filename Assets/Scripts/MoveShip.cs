@@ -18,12 +18,14 @@ public class MoveShip : MonoBehaviour
         #region WASD
         if (Input.GetKey(KeyCode.W))
         {
-            Ship.transform.position = new Vector3(Ship.transform.position.x, Ship.transform.position.y + (speed - 1.5f) * Time.deltaTime, Ship.transform.position.z);
+            if (Ship.transform.position.y <= 15)
+                Ship.transform.position = new Vector3(Ship.transform.position.x, Ship.transform.position.y + (speed - 1.5f) * Time.deltaTime, Ship.transform.position.z);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            Ship.transform.position = new Vector3(Ship.transform.position.x, Ship.transform.position.y - (speed - 1.5f) * Time.deltaTime, Ship.transform.position.z);
+            if (Ship.transform.position.y >= -15)
+                Ship.transform.position = new Vector3(Ship.transform.position.x, Ship.transform.position.y - (speed - 1.5f) * Time.deltaTime, Ship.transform.position.z);
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -47,12 +49,14 @@ public class MoveShip : MonoBehaviour
         #region ARROW
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            Ship.transform.position = new Vector3(Ship.transform.position.x, Ship.transform.position.y + (speed - 1.5f) * Time.deltaTime, Ship.transform.position.z);
+            if (Ship.transform.position.y <= 15)
+                Ship.transform.position = new Vector3(Ship.transform.position.x, Ship.transform.position.y + (speed - 1.5f) * Time.deltaTime, Ship.transform.position.z);
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            Ship.transform.position = new Vector3(Ship.transform.position.x, Ship.transform.position.y - (speed - 1.5f) * Time.deltaTime, Ship.transform.position.z);
+            if (Ship.transform.position.y >= -15)
+                Ship.transform.position = new Vector3(Ship.transform.position.x, Ship.transform.position.y - (speed - 1.5f) * Time.deltaTime, Ship.transform.position.z);
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
