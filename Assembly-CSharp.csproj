@@ -54,8 +54,11 @@
      <Compile Include="Assets\Scripts\AbstractTargetFollower.cs" />
      <Compile Include="Assets\Scripts\AutoCam.cs" />
      <Compile Include="Assets\Scripts\BlastShot.cs" />
+     <Compile Include="Assets\Scripts\Boss1Controller.cs" />
+     <Compile Include="Assets\Scripts\Boss2Controller.cs" />
      <Compile Include="Assets\Scripts\CameraMove.cs" />
      <Compile Include="Assets\Scripts\DestroyParticle.cs" />
+     <Compile Include="Assets\Scripts\Enemy1Controller.cs" />
      <Compile Include="Assets\Scripts\FreeLookCam.cs" />
      <Compile Include="Assets\Scripts\HandHeldCam.cs" />
      <Compile Include="Assets\Scripts\LookatTarget.cs" />

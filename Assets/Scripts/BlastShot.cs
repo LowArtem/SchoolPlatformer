@@ -42,6 +42,10 @@ public class BlastShot : MonoBehaviour
             Instantiate(particle, transform.position, new Quaternion(0.0f, -1.0f, 0.0f, 0.0f));
             Destroy(gameObject);
         }
+        if (other.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnBecameInvisible()
