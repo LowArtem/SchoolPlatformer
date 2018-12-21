@@ -10,26 +10,28 @@ public class BlastShot : MonoBehaviour
     [SerializeField]
     GameObject particle;
 
+    public static int damage = 1;
+
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Vector3 directon = new Vector3(0, 0, 0);
 
+        transform.localScale = (transform.localScale / 20);
+
         if (MoveShip.isRight)
         {
             directon = new Vector3(force, 0, 0);
-            transform.localScale = (transform.localScale / 20);
         }
         else if (MoveShip.isLeft)
         {
             directon = new Vector3(-force, 0, 0);
-            transform.localScale = (transform.localScale / 20);
         }
         else
         {
             directon = new Vector3(force, 0, 0);
-            transform.localScale = (transform.localScale / 20);
         }
 
         rb.AddForce(directon, ForceMode2D.Impulse);
@@ -45,6 +47,8 @@ public class BlastShot : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
+            //Debug.Log("Shot");
+            damage = 1;
         }
     }
 

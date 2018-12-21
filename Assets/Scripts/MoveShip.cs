@@ -14,6 +14,8 @@ public class MoveShip : MonoBehaviour
 
     void Update()
     {
+        if (!PlayerControler.isDeath)
+        {
 
         #region WASD
         if (Input.GetKey(KeyCode.W))
@@ -75,5 +77,7 @@ public class MoveShip : MonoBehaviour
             isLeft = false;
         }
         #endregion
+        
+        }
     }
 }
