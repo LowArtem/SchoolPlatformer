@@ -9,6 +9,8 @@ TagManager:
   - Bullet
   - Enemy
   - EnemyBullet
+  - black_ground
+  - Heart
   layers:
   - Default
   - TransparentFX

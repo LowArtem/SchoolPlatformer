@@ -11,6 +11,10 @@ public class BlastShot : MonoBehaviour
     GameObject particle;
 
     public static int damage = 1;
+    Vector3 test_direct;
+
+    bool isRight = false;
+    bool isLeft = false;
 
 
 
@@ -47,8 +51,44 @@ public class BlastShot : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
-            //Debug.Log("Shot");
             damage = 1;
+        }
+        if (other.gameObject.tag == "black_ground")
+        {
+            if (transform.rotation.y == -1)  // left
+            {
+                test_direct = new Vector3(force * 2, 0, 0);
+                isLeft = true;
+                isRight = false;
+            }
+            else if (transform.rotation.y == 0) // right
+            {
+                test_direct = new Vector3(-force * 2, 0, 0);
+                isRight = true;
+                isLeft = false;
+            }
+            else
+            {
+                test_direct = new Vector3(-force * 2, 0, 0); // default (right)
+                isRight = true;
+                isLeft = false;
+            }
+
+
+            if (isRight)  // было right, станет left
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 180);
+                isRight = false;
+                isLeft = true;
+            }
+            else if (isLeft) // было left, станет right
+            {
+                isLeft = false;
+                isRight = true;
+                transform.rotation = Quaternion.Euler(0, 0, 360);
+            }
+
+            rb.AddForce(test_direct, ForceMode2D.Impulse);
         }
     }
 

@@ -11,13 +11,9 @@ public class Boss2Controller : MonoBehaviour
     public float delayTime = 0.6f;
     bool canShot = true;
 
-    //[HideInInspector]
     public int Enemy_lives = 20;
 
-    /*void Start()
-    {
-        Enemy_lives = 10;
-    }*/
+    
     void Update()
     {
         if (canShot)
@@ -43,12 +39,9 @@ public class Boss2Controller : MonoBehaviour
 
             Enemy_lives = Enemy_lives - BlastShot.damage;
 
-            //Debug.Log("Lives - " + Enemy_lives + ", Damage - " + BlastShot.damage);
-
             if (Enemy_lives <= 0)
             {
                 Instantiate(ExplosionParticles, transform.position, transform.rotation);
-                Enemy_lives = 20;
                 Destroy(Boss2.gameObject);
             }
         }

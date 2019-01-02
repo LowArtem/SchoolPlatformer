@@ -60,7 +60,10 @@
      <Compile Include="Assets\Scripts\DestroyParticle.cs" />
      <Compile Include="Assets\Scripts\Enemy1Controller.cs" />
      <Compile Include="Assets\Scripts\EnemyBlastShot.cs" />
+     <Compile Include="Assets\Scripts\EnemyBlastShotSimple.cs" />
+     <Compile Include="Assets\Scripts\EnemyCircleShot.cs" />
      <Compile Include="Assets\Scripts\FreeLookCam.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\HandHeldCam.cs" />
      <Compile Include="Assets\Scripts\LookatTarget.cs" />
      <Compile Include="Assets\Scripts\MoveShip.cs" />
