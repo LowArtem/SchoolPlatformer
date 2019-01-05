@@ -11,6 +11,7 @@ TagManager:
   - EnemyBullet
   - black_ground
   - Heart
+  - ButtonOpen
   layers:
   - Default
   - TransparentFX

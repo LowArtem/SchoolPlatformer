@@ -16,11 +16,13 @@ public class PlayerControler : MonoBehaviour
     public GameObject ExplosionParticles;
     public GameObject HeartParticles;
 
+    public GameObject Door1;   // ТЕСТОВОЕ ДЛЯ ОСВОБОЖДЕНИЕ БОТОВ ИЗ ВЛЕТКИ УБРАТЬ ПОТОМ
+    public GameObject Door2;   // ТЕСТОВОЕ ДЛЯ ОСВОБОЖДЕНИЕ БОТОВ ИЗ ВЛЕТКИ УБРАТЬ ПОТОМ
+
     public float delayTime;
 
     bool canShoot = true;
 
-    //[HideInInspector]
     public int lives = 3;
 
     public static bool isDeath = false;
@@ -45,53 +47,86 @@ public class PlayerControler : MonoBehaviour
     {
         if (other.gameObject.tag == "EnemyBullet")
         {
-            animator = GetComponent<Animator>();
-            animator.Play("Damage");
+            Damage(EnemyBlastShot.Enemy_damage);
+        }
 
-            lives = lives - EnemyBlastShot.Enemy_damage;
-
-            if (lives == 2)
-            {
-                heart3.gameObject.SetActive(false);
-            }
-
-            if (lives == 1)
-            {
-                heart2.gameObject.SetActive(false);
-            }
-
-            if (lives <= 0)
-            {
-                heart1.gameObject.SetActive(false);
-
-                isDeath = true;
-
-                Instantiate(ExplosionParticles, transform.position, transform.rotation);
-                Destroy(player.gameObject);
-            }
+        if (other.gameObject.tag == "Enemy")
+        {
+            Damage(1);
         }
 
         if (other.gameObject.tag == "Heart")
         {
-            Instantiate(HeartParticles, transform.position, transform.rotation);
-
-            animator = GetComponent<Animator>();
-            animator.Play("Heart");
-
-            if (lives < 3)
-                lives = lives + 1;
-
-            if (lives == 3)
-            {
-                heart3.gameObject.SetActive(true);
-            }
-
-            if (lives == 2)
-            {
-                heart2.gameObject.SetActive(true);
-            }
+            Healing(1);
 
             Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag == "ButtonOpen") // ТЕСТОВОЕ ДЛЯ ОСВОБОЖДЕНИЕ БОТОВ ИЗ ВЛЕТКИ УБРАТЬ ПОТОМ
+        {
+            Door1.gameObject.SetActive(false);
+            Door2.gameObject.SetActive(false);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    void Damage(int damage)
+    {
+        animator = GetComponent<Animator>();
+        animator.Play("Damage");
+
+        lives = lives - damage;
+
+        if (lives == 2)
+        {
+            heart3.gameObject.SetActive(false);
+        }
+
+        if (lives == 1)
+        {
+            heart2.gameObject.SetActive(false);
+        }
+
+        if (lives <= 0)
+        {
+            heart1.gameObject.SetActive(false);
+
+            isDeath = true;
+
+            Instantiate(ExplosionParticles, transform.position, transform.rotation);
+            Destroy(player.gameObject);
+        }
+    }
+
+    void Healing(int healing)
+    {
+        Instantiate(HeartParticles, transform.position, transform.rotation);
+
+        animator = GetComponent<Animator>();
+        animator.Play("Heart");
+
+        if (lives < 3)
+            lives = lives + healing;
+
+        if (lives == 3)
+        {
+            heart3.gameObject.SetActive(true);
+        }
+
+        if (lives == 2)
+        {
+            heart2.gameObject.SetActive(true);
         }
     }
 }

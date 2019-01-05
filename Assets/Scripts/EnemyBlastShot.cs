@@ -9,7 +9,7 @@ public class EnemyBlastShot : MonoBehaviour
     GameObject player;
     Rigidbody2D rb;
     private float force = 0.5f;
-    public static int Enemy_damage = 1;
+    public static int Enemy_damage = 0;
 
     [SerializeField]
     GameObject particle;
@@ -38,7 +38,13 @@ public class EnemyBlastShot : MonoBehaviour
 
             BulletForce = new Vector2(dir.x, dir.y);
 
-            rb.AddRelativeForce(BulletForce * force, ForceMode2D.Impulse);
+
+            if (Boss2Controller.speed > 0)
+                rb.AddRelativeForce(BulletForce * force * Boss2Controller.speed, ForceMode2D.Impulse);
+            else 
+                rb.AddRelativeForce(BulletForce * force, ForceMode2D.Impulse);
+
+
         }
         else
             Destroy(gameObject);

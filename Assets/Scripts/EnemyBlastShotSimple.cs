@@ -8,7 +8,7 @@ public class EnemyBlastShotSimple : MonoBehaviour
 
     GameObject player;
     Rigidbody2D rb;
-    private float force = 0.5f;
+    private float force = 3f;
     public static int Enemy_damage = 1;
 
     [SerializeField]
@@ -25,14 +25,30 @@ public class EnemyBlastShotSimple : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
+
         transform.localScale = (transform.localScale / 20);
 
         player = GameObject.FindWithTag("Player");
 
         if (player != null)
         {
-            BulletForce = new Vector2(-transform.position.x, 0);
-            transform.rotation = Quaternion.Euler(0, 0, 180);
+            Vector3 dir = player.transform.position - transform.position;
+
+
+
+            if (dir.x < 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 180);
+                BulletForce = new Vector3(-force, 0, 0);
+
+            }
+            else if (dir.x > 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 360);
+                BulletForce = new Vector3(force, 0, 0);
+
+            }
+
 
 
             rb.AddForce(BulletForce * force, ForceMode2D.Impulse);

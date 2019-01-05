@@ -25,13 +25,30 @@ public class Boss1Controller : MonoBehaviour
     bool canShotThird = false;
     bool secondPhase = false;
     bool thirdPhase = false;
+    bool isLeft = true;
+    bool isRight = false;
+    
+    private float speed = 2.5f;
+    private float Speed_vibration = 2.5f; // Скорость вибрации по синусоиде
+    private float magnitude = 2.2f; // Высота синусоиды
+
+    private Vector3 axis; // вектор движения по вертикали
+    private Vector3 pos; // вектор движения по горизонтали
+
+
 
     void Start()
     {
         ConstLives = Enemy_lives;
+
+        pos = transform.position;
+        axis = transform.up;
     }
+
     void Update()
     {
+        Move();
+
         if (canShotSimple && !secondPhase && !thirdPhase)
         {
             canShotSimple = false;
@@ -99,6 +116,35 @@ public class Boss1Controller : MonoBehaviour
             {
                 Instantiate(ExplosionParticles, transform.position, transform.rotation);
                 Destroy(this.gameObject);
+            }
+        }
+    }
+
+
+
+    void Move()
+    {
+        if (!isRight)
+        {
+            pos += transform.right * Time.deltaTime * speed;
+            transform.position = pos + axis * Mathf.Sin(Time.time * Speed_vibration) * magnitude;
+
+            if (transform.localPosition.x >= 4405)
+            {
+                isRight = true;
+                isLeft = false;
+            }
+        }
+
+        if (!isLeft)
+        {
+            pos -= transform.right * Time.deltaTime * speed;
+            transform.position = pos + axis * Mathf.Sin(Time.time * Speed_vibration) * magnitude;
+
+            if (transform.localPosition.x <= 2300)
+            {
+                isLeft = true;
+                isRight = false;
             }
         }
     }
